@@ -42,4 +42,4 @@ if __name__ == "__main__":
     try:
         filterstring()
     except AssertionError as error:
-        print(error)
+        print("AssertionError:", error)

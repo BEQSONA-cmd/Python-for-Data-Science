@@ -68,4 +68,4 @@ if __name__ == "__main__":
     try:
         sos()
     except AssertionError as error:
-        print(error)
+        print("AssertionError:", error)

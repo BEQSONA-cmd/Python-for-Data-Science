@@ -4,9 +4,17 @@ def ft_filter(func, items):
     is true. If function is None, return the items that are true.
     """
 
-    if func is None:
-        func = bool
-
     for item in items:
         if func(item):
             yield item
+
+
+# def startswith_a(w):
+#     return w.startswith("a")
+
+
+# if __name__ == "__main__":
+#     old_list = ["apple", "banana", "ananas"]
+
+#     new_list = ft_filter(startswith_a, old_list)
+#     print(list(new_list))
