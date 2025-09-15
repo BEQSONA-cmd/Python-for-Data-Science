@@ -1,4 +1,7 @@
-def ft_filter(func, items):
+from typing import Iterable, Generator, Any
+
+
+def ft_filter(func, items: Iterable) -> Generator[Any, None, None]:
     """
     Return an iterator yielding those items of iterable for which func(item)
     is true. If function is None, return the items that are true.

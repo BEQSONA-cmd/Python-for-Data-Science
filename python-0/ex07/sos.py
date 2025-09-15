@@ -51,14 +51,12 @@ def sos():
     """
     converts string to morse code
     """
-    if len(sys.argv) != 2:
-        raise AssertionError("the arguments are bad")
+    assert len(sys.argv) == 2, "the arguments are bad"
     arg_str = sys.argv[1].upper()
     NESTED_MORSE = get_morse_code()
     morse_str = ""
     for char in arg_str:
-        if char not in NESTED_MORSE:
-            raise AssertionError("the arguments are bad")
+        assert char in NESTED_MORSE, "the arguments are bad"
         morse_str += NESTED_MORSE[char]
 
     print(morse_str)

@@ -2,27 +2,15 @@
 import sys
 
 
-def compare(n):
-    """
-    lambda functuon for comparing numbers
-    """
-    return lambda a: a > n
-
-
-def str_compare(str):
-    """
-    function for comparing string length to argument
-    """
-    N = int(sys.argv[2])
-    return len(str) > N
+def compare(n: int):
+    return lambda s: len(s) > n
 
 
 def filterstring():
     """
     outputs a list of words from S that have a length greater than N
     """
-    if len(sys.argv) != 3:
-        raise AssertionError("the arguments are bad")
+    assert len(sys.argv) == 3, "the arguments are bad"
     try:
         N = int(sys.argv[2])
     except ValueError:
@@ -32,8 +20,8 @@ def filterstring():
 
     compare_len = compare(N)
 
-    new_list = [S for S in str_list if compare_len(len(S))]
-    # new_list = ft_filter(str_compare, str_list)
+    new_list = (S for S in str_list if compare_len(S))
+    # new_list = ft_filter(compare(N), str_list)
 
     print(list(new_list))
 

@@ -12,10 +12,10 @@ def error_handle():
         text = sys.stdin.read()
     elif len(sys.argv) == 2:
         text = sys.argv[1]
-    elif len(sys.argv) > 2:
-        raise AssertionError("more than one argument is provided")
-    if not text:
-        raise AssertionError("No text provided")
+
+    assert len(sys.argv) <= 2, "more than one argument is provided"
+    assert text, "No text provided"
+
     return text
 
 

@@ -5,8 +5,7 @@ def main():
     if len(sys.argv) == 1:
         return
 
-    if len(sys.argv) > 2:
-        raise AssertionError("more than one argument is provided")
+    assert len(sys.argv) <= 2, "more than one argument is provided"
 
     try:
         num = int(sys.argv[1])
