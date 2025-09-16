@@ -3,11 +3,18 @@ import numpy as np
 
 def give_bmi(height: list[int | float],
              weight: list[int | float]) -> list[int | float]:
+    """
+    returns a list of BMI values
+    """
 
     return list(np.divide(weight, np.square(height)))
 
 
 def apply_limit(bmis: list[int | float], limit: int) -> list[bool]:
+    """
+    accepts a list of integers or floats and an integer representing
+    a limit as parameters
+    """
     return [bmi > limit for bmi in bmis]
 
 
