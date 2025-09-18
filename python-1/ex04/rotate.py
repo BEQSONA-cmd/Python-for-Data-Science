@@ -5,7 +5,7 @@ import numpy as np
 
 def transpose(array):
     """
-    takes array and transposes it
+    takes array: list[list[list[int]]] and transposes it
     array: -> shape (height, width, channels)
     returns: -> shape (width, height, channels)
     """
@@ -29,7 +29,7 @@ if __name__ == "__main__":
         print("The shape of image is:", arr.shape, "or", arr.shape[:2])
         print(arr)
 
-        arr_rotated = np.array(transpose(arr))
+        arr_rotated = np.array(transpose(img))
 
         new_img = Image.fromarray(arr_rotated)
         new_img.show()
