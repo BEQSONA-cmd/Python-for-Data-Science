@@ -1,11 +1,25 @@
 import numpy as np
 
 
+def error_handle(height: list[int | float], weight: list[int | float]):
+    """
+    checks for errors in the input lists
+    """
+    if not isinstance(height, list) or not isinstance(weight, list):
+        raise AssertionError("Both height and weight must be lists.")
+    if len(height) != len(weight):
+        raise AssertionError("Height and weight are not of the same size.")
+    for h, w in zip(height, weight):
+        if not isinstance(h, (int, float)) or not isinstance(w, (int, float)):
+            raise AssertionError("some values are not numbers.")
+
+
 def give_bmi(height: list[int | float],
              weight: list[int | float]) -> list[int | float]:
     """
     returns a list of BMI values
     """
+    error_handle(height, weight)
 
     return list(np.divide(weight, np.square(height)))
 

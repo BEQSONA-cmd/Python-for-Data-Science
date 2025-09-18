@@ -29,7 +29,7 @@ if __name__ == "__main__":
         print("The shape of image is:", arr.shape, "or", arr.shape[:2])
         print(arr)
 
-        arr_rotated = np.array(transpose(img))
+        arr_rotated = np.array(transpose(arr))
 
         new_img = Image.fromarray(arr_rotated)
         new_img.show()
