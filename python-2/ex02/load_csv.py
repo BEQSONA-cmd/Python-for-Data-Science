@@ -1,5 +1,4 @@
 import pandas as pd
-import numpy as np
 
 
 def load(path: str):
@@ -14,5 +13,4 @@ def load(path: str):
         return None
 
     df = pd.read_csv(path)
-    print("Loading dataset of dimensions:", np.array(df).shape)
     return df
