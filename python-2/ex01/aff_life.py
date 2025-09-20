@@ -9,7 +9,7 @@ def main():
     germany_data = data[data["country"] == "Germany"]
 
     germany_long = germany_data.melt(
-        id_vars=["country"],
+        id_vars="country",
         var_name="year",
         value_name="Life expectancy"
     )
