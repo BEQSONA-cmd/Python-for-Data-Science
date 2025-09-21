@@ -11,6 +11,9 @@ def display_diagram(data, file_name, date):
     """
     plt.title(date)
     sns.scatterplot(x="GDP", y="Life expectancy", data=data)
+    plt.xscale("log")
+    plt.xticks([1000, 10000], ["1000", "10000"])
+
     plt.savefig(file_name)
     Image.open(file_name).show()
     os.remove(file_name)
