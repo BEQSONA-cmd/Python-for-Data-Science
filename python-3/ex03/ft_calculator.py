@@ -1,4 +1,7 @@
 class calculator:
+    """
+    A simple calculator class.
+    """
     def __init__(self, list):
         self.list = list
 

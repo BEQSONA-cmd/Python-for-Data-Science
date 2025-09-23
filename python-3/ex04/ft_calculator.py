@@ -1,4 +1,7 @@
 class calculator:
+    """
+    A advanced calculator class.
+    """
     @staticmethod
     def dotproduct(V1: list[float], V2: list[float]) -> None:
         list = [x * y for x, y, in zip(V1, V2)]
