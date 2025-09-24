@@ -11,6 +11,14 @@ def generate_id() -> str:
 class Student:
     name: str
     surname: str
+    login: str = ""
+    id: str = ""
+
+    def __init__(self, name: str, surname: str):
+        self.name = name
+        self.surname = surname
+        self.login = name[0] + surname
+        self.id = generate_id()
 
 
 def main():
