@@ -1,24 +1,31 @@
 from typing import Any
 
+
 def callLimit(limit: int):
-    count = 0
     def callLimiter(function):
         def limit_function(*args: Any, **kwds: Any):
-            function()
-
+            nonlocal limit
+            if limit > 0:
+                limit -= 1
+                return function(*args, **kwds)
+            else:
+                return print("Error :", function, "call too many times")
+        return limit_function
+    return callLimiter
 
 
 def main():
     @callLimit(3)
     def f():
-        print ("f()")
-    
+        print("f()")
+
     @callLimit(1)
     def g():
-        print ("g()")
+        print("g()")
     for i in range(3):
         f()
         g()
+
 
 if __name__ == "__main__":
     main()
