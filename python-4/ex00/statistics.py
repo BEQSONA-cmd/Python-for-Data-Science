@@ -63,19 +63,17 @@ def ft_statistics(*args: Any, **kwargs: Any):
     if len(args) == 0 or len(kwargs) == 0:
         return print("ERROR")
 
-    nums = args
-
-    for x in nums:
-        if not isinstance(x, (int, float)):
+    for num in args:
+        if not isinstance(num, (int, float)):
             return print("ERROR")
 
     for operation in kwargs.values():
         match operation:
-            case "mean": print("mean :", mean(nums))
-            case "median": print("median :", median(nums))
-            case "quartile": print("quartile :", quartile(nums))
-            case "std": print("std :", std(nums))
-            case "var": print("var :", var(nums))
+            case "mean": print("mean :", mean(args))
+            case "median": print("median :", median(args))
+            case "quartile": print("quartile :", quartile(args))
+            case "std": print("std :", std(args))
+            case "var": print("var :", var(args))
             case _: pass
 
 
