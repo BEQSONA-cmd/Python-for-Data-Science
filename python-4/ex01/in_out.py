@@ -1,8 +1,3 @@
-class counter:
-    def __init__(self, num):
-        self.num = num
-
-
 def square(x: int | float) -> int | float:
     return x * x
 
@@ -12,6 +7,9 @@ def pow(x: int | float) -> int | float:
 
 
 def outer(x: int | float, function) -> object:
+    """
+    function keeps state of x and applies function to it
+    """
     def inner():
         nonlocal x
         x = function(x)
@@ -20,6 +18,9 @@ def outer(x: int | float, function) -> object:
 
 
 def outer_2(x: int | float, function):
+    """
+    function keeps state of state and applies function to x
+    """
     state = [x]
 
     def change(state):
@@ -33,16 +34,11 @@ def main():
     print(my_counter())
     print(my_counter())
     print(my_counter())
-
-    my_counter = outer_2(3, square)
-    print(my_counter())
-    print(my_counter())
-    print(my_counter())
-    # print("---")
-    # another_counter = outer_2(1.5, pow)
-    # print(another_counter())
-    # print(another_counter())
-    # print(another_counter())
+    print("---")
+    another_counter = outer_2(1.5, pow)
+    print(another_counter())
+    print(another_counter())
+    print(another_counter())
 
 
 if __name__ == "__main__":

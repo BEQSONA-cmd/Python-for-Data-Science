@@ -2,10 +2,16 @@ from typing import Any
 
 
 def mean(nums):
+    """
+    calculates the mean of a list of numbers
+    """
     return sum(nums) / len(nums)
 
 
 def median(nums):
+    """
+    calculates the median of a list of numbers
+    """
     nums = sorted(nums)
     n = len(nums)
     mid = n // 2
@@ -16,6 +22,9 @@ def median(nums):
 
 
 def quartile(nums):
+    """
+    calculates (25, 75) the quartiles of a list of numbers
+    """
     nums = sorted(nums)
     n = len(nums)
     mid = n // 2
@@ -31,18 +40,25 @@ def quartile(nums):
 
 
 def var(nums):
+    """
+    calculates the variance of a list of numbers
+    """
     m = mean(nums)
     list = [(x - m) ** 2 for x in nums]
     return sum(list) / len(nums)
 
 
 def std(nums):
+    """
+    calculates the standard deviation of a list of numbers
+    """
     return var(nums) ** 0.5
 
 
 def ft_statistics(*args: Any, **kwargs: Any):
     """
-    makes the Mean, Median, Quartile
+    makes statistics (mean, median, quartile, std, var)
+      on a list of numbers
     """
     if len(args) == 0 or len(kwargs) == 0:
         return print("ERROR")
